@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 
-DATA_URL = 'students_info.csv'
+DATA_URL = 'https://raw.githubusercontent.com/sntarda/datavizfinal/main/students_info.csv'
 
 def load_data(nrows):
     data = pd.read_csv(DATA_URL, nrows=nrows)
