@@ -49,4 +49,3 @@ elif selected == "Financial Analysis":
     financialAnalysis.main(st, iframe_style)
 elif selected == "Enrollment Demographics":
     demographics.main(st, iframe_style)
-
