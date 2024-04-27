@@ -86,10 +86,10 @@ def main(st):
     st.write("\n\n")
     st.markdown("""
     <div style='text-align: left;'>
-        <h3>Workflow Diagram</h3>
+        <h3>WORKFLOW DIAGRAM</h3>
     </div>
     """, unsafe_allow_html=True)
-    st.image('Data Viz Project - Workflow Diagram - Group 1.jpg',  width=700, output_format='auto')
+    st.image('workflowdiagram.jpg',  width=700, output_format='auto')
 
     # Divider
     st.image('top_data-science-divider-1.png',  width=700, output_format='auto')
