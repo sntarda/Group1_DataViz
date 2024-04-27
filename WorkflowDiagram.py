@@ -2,7 +2,7 @@ import streamlit as st
 from pdf2image import convert_from_path
 import os
 
-def main():
+def main(st, iframe_style):
     st.title('PDF Viewer App')
 
     # Path to your PDF file
