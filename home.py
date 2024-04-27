@@ -7,8 +7,8 @@ def create_contribution_table():
         "Tasks": ["Project Proposal", "Dataset Preparation", "Visualization Graphs", "Website Design", "Meetings & Communication", "Presentation Slides", "Presentation Participation"],
         "Samir": ["100%", "100%", "50%", "Support", "100%", "50%", "Present & Active"],
         "Uzair": ["Support", "Support", "50%", "100%", "100%", "50%", "Present & Active"],
-        "Vamsi": ["Support", "0", "0", "0", "20%", "0", "?"],
-        "Venkatesh": ["Support", "0", "Support", "0", "20%", "0", "?"]
+        "Vamsi": ["Support", "0", "0", "0", "20%", "0", "0"],
+        "Venkatesh": ["Support", "0", "Support", "0", "20%", "0", "0"]
     }
     contributions = pd.DataFrame(data)
     
@@ -57,6 +57,11 @@ def main(st):
     st.write("\n")
     st.image('data-analytics1.jpg',  width=700, output_format='auto')
     st.image('data-analytics2.png',  width=700, output_format='auto')
+    <div style='text-align: left;'>
+        <h3>WORKFLOW DIAGRAM</h3>
+    </div>
+    """, unsafe_allow_html=True)
+    st.image('workflowdiagram.jpg',  width=700, output_format='auto')
     
     # Divider
     st.image('top_data-science-divider-1.png',  width=700, output_format='auto')
@@ -80,16 +85,6 @@ def main(st):
         * Optimize financial strategies
         * Revisit and Adjust marketing statrigies to compensate for the decrease in enrollment
         """)
-    
-    # Divider
-    st.image('top_data-science-divider-1.png',  width=700, output_format='auto')
-    st.write("\n\n")
-    st.markdown("""
-    <div style='text-align: left;'>
-        <h3>WORKFLOW DIAGRAM</h3>
-    </div>
-    """, unsafe_allow_html=True)
-    st.image('workflowdiagram.jpg',  width=700, output_format='auto')
 
     # Divider
     st.image('top_data-science-divider-1.png',  width=700, output_format='auto')
