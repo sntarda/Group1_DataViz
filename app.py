@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import dataset
-import activeEnrollment, home, financialAnalysis, demographics
+import activeEnrollment, home, financialAnalysis, demographics, WorkflowDiagram
 # Define the CSS style for the iframe
 iframe_style = """
     width: 1024px; 
@@ -10,8 +10,8 @@ iframe_style = """
 """
 
 with st.sidebar:
-    selected = option_menu("Main Menu", ["Home", "Dataset", "Active Enrollment", "Financial Analysis", 'Enrollment Demographics'], 
-    icons=['house', 'database', "bar-chart-line", 'currency-dollar', 'people', 'table'], 
+    selected = option_menu("Main Menu", ["Home", "Dataset", "Active Enrollment", "Financial Analysis", 'Enrollment Demographics', "Workflow Diagram"], 
+    icons=['house', 'database', "bar-chart-line", 'currency-dollar', 'people', 'table', 'diagram'], 
     menu_icon="cast", default_index=0, orientation="vertical")
 
 if selected == "Home":
@@ -49,3 +49,5 @@ elif selected == "Financial Analysis":
     financialAnalysis.main(st, iframe_style)
 elif selected == "Enrollment Demographics":
     demographics.main(st, iframe_style)
+elif selected == "Workflow Diagram":
+    WorkflowDiagram.main(st, ifram_style)
