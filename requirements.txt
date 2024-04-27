@@ -1,3 +1,5 @@
 streamlit
 matplotlib
 streamlit_option_menu
+pdf2image
+os
