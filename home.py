@@ -58,7 +58,7 @@ def main(st):
     st.image('data-analytics1.jpg',  width=700, output_format='auto')
     st.image('data-analytics2.png',  width=700, output_format='auto')
     <div style='text-align: left;'>
-        <h3>WORKFLOW DIAGRAM</h3>
+        <h3>WORKFLOW CHART</h3>
     </div>
     """, unsafe_allow_html=True)
     st.image('workflowdiagram.jpg',  width=700, output_format='auto')
