@@ -11,7 +11,7 @@ iframe_style = """
 
 with st.sidebar:
     selected = option_menu("Main Menu", ["Home", "Dataset", "Active Enrollment", "Financial Analysis", 'Enrollment Demographics', "Workflow Diagram"], 
-    icons=['house', 'database', "bar-chart-line", 'currency-dollar', 'people', 'table', 'diagram'], 
+    icons=['house', 'database', "bar-chart-line", 'currency-dollar', 'people', 'table'], 
     menu_icon="cast", default_index=0, orientation="vertical")
 
 if selected == "Home":
