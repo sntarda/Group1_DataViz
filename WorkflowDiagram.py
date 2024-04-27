@@ -17,6 +17,4 @@ def main(st, iframe_style):
             st.image(image, caption=f'Page {i+1}')
     else:
         st.error("File not found!")
-
-if __name__ == "__main__":
-    main()
+    return image
