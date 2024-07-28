@@ -91,6 +91,3 @@ def main():
     
     # Display the table with AgGrid
     AgGrid(contributions, gridOptions=grid_options, enable_enterprise_modules=True)
-
-if __name__ == "__main__":
-    main()
