@@ -11,7 +11,7 @@ def create_contribution_table():
         "Venkatesh": ["Support", "0", "Support", "0", "20%", "0", "0"]
     }
     contributions = pd.DataFrame(data)
-    
+
     styler = contributions.style.set_table_styles(
         [
             # Style for the headers
@@ -22,7 +22,7 @@ def create_contribution_table():
             {'selector': 'tbody td', 'props': [('text-align', 'left')]},
         ], overwrite=False)
     
-    return styler.to_html()
+    return styler
 
 def main(st):
 
