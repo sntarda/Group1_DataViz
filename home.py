@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from st_aggrid import AgGrid, GridOptionsBuilder
 
 def create_contribution_table():
     # Data for the table
@@ -11,21 +12,9 @@ def create_contribution_table():
         "Venkatesh": ["Support", "0", "Support", "0", "20%", "0", "0"]
     }
     contributions = pd.DataFrame(data)
+    return contributions
 
-    styler = contributions.style.set_table_styles(
-        [
-            # Style for the headers
-            {'selector': 'thead th', 'props': [('background-color', '#D7DFF4'), ('color', '#204760'), ('font-weight', 'bold')]},
-            # Style for the body cells (row labels)
-            {'selector': 'tbody tr th', 'props': [('text-align', 'right'), ('font-weight', 'bold'), ('padding-right', '10px')]},
-            # Style for the data cells
-            {'selector': 'tbody td', 'props': [('text-align', 'left')]},
-        ], overwrite=False)
-    
-    return styler
-
-def main(st):
-
+def main():
     st.markdown("<h1 style='text-align: center;'>FINAL GROUP PROJECT</h1>", unsafe_allow_html=True)
 
     # Enhanced header styles
@@ -39,9 +28,8 @@ def main(st):
     <p style='text-align: center; margin-top: 0px; font-size: 20px; font-weight: bold;'>Samir Tarda, Uzair Naeem, Vamsi Krishna, and Venkatesh Thentu</p>
     """, unsafe_allow_html=True)
 
-
     # Divider
-    st.image('top_data-science-divider-1.png',  width=700, output_format='auto')
+    st.image('top_data-science-divider-1.png', width=700, output_format='auto')
     st.write("\n\n")
 
     # Project Introduction using Markdown with HTML for styling
@@ -55,12 +43,12 @@ def main(st):
 
     # Image example with custom width and center alignment
     st.write("\n")
-    st.image('data-analytics1.jpg',  width=700, output_format='auto')
-    st.image('data-analytics2.png',  width=700, output_format='auto')
-    st.image('workflowdiagram.jpg',  width=700, output_format='auto')
+    st.image('data-analytics1.jpg', width=700, output_format='auto')
+    st.image('data-analytics2.png', width=700, output_format='auto')
+    st.image('workflowdiagram.jpg', width=700, output_format='auto')
     
     # Divider
-    st.image('top_data-science-divider-1.png',  width=700, output_format='auto')
+    st.image('top_data-science-divider-1.png', width=700, output_format='auto')
     st.write("\n\n")
     
     # Column layout for insights and actions with better visual formatting
@@ -79,11 +67,11 @@ def main(st):
         * Adjust resource allocation based on trends
         * Plan for future enrollment changes
         * Optimize financial strategies
-        * Revisit and Adjust marketing statrigies to compensate for the decrease in enrollment
+        * Revisit and adjust marketing strategies to compensate for the decrease in enrollment
         """)
 
     # Divider
-    st.image('top_data-science-divider-1.png',  width=700, output_format='auto')
+    st.image('top_data-science-divider-1.png', width=700, output_format='auto')
     st.write("\n\n")
     
     st.markdown("""
@@ -92,11 +80,17 @@ def main(st):
     </div>
     """, unsafe_allow_html=True)
     
-    # Render the contribution table as HTML
-    contributions_html = create_contribution_table()
-    st.write(contributions_html, unsafe_allow_html=True)
+    # Create and display the contribution table
+    contributions = create_contribution_table()
+    
+    # Configure AgGrid options
+    gb = GridOptionsBuilder.from_dataframe(contributions)
+    gb.configure_default_column(editable=True, groupable=True)
+    gb.configure_column("Tasks", editable=False)
+    grid_options = gb.build()
+    
+    # Display the table with AgGrid
+    AgGrid(contributions, gridOptions=grid_options, enable_enterprise_modules=True)
 
 if __name__ == "__main__":
     main()
-
-
